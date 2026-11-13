@@ -256,8 +256,9 @@
       .tablet-16-10-frame {
         aspect-ratio: 16 / 10;
         width: 100%;
-        max-width: min(92rem, calc((100dvh - 6.5rem) * 1.6));
-        max-height: calc(100dvh - 6.5rem);
+        height: min(calc(100dvh - 6.2rem), calc((100vw - 4rem) * 0.625));
+        max-width: min(92rem, calc((100dvh - 6.2rem) * 1.6));
+        max-height: calc(100dvh - 6.2rem);
       }
     }
   </style>
@@ -331,7 +332,7 @@
   </header>
 
   <!-- Main Content (16:10 Landscape Tablet Viewport) -->
-  <main class="relative z-10 flex-1 w-full mx-auto px-5 sm:px-8 lg:px-10 py-3 sm:py-4 flex flex-col items-center justify-center">
+  <main class="relative z-10 flex-1 w-full mx-auto px-5 sm:px-8 lg:px-10 py-2.5 sm:py-3 flex flex-col items-center justify-center min-h-0">
     <!-- HOME MENU VIEW -->
     <section id="homeView" class="tablet-16-10-frame flex flex-col justify-between animate-pop">
       <div class="text-center mb-3 sm:mb-4 shrink-0">
@@ -444,8 +445,8 @@
     </section>
 
     <!-- GAME STAGE CONTAINER (16:10 Landscape Tablet Box) -->
-    <section id="gameView" class="hidden tablet-16-10-frame bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-4 sm:p-6 lg:p-8 flex flex-col justify-center overflow-y-auto animate-pop">
-      <div id="gameContent" class="w-full h-full flex flex-col justify-center"></div>
+    <section id="gameView" class="hidden tablet-16-10-frame bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-4 sm:p-5 lg:p-6 flex flex-col justify-between overflow-hidden animate-pop">
+      <div id="gameContent" class="w-full h-full flex-1 min-h-0 flex flex-col justify-between"></div>
     </section>
   </main>
 
@@ -1697,12 +1698,12 @@
       const themeVisuals = {
         default: {
           headerClass: 'w-full bg-white/90 backdrop-blur-md shadow-sm border-b-4 border-amber-300 sticky top-0 z-40 transition-colors duration-300',
-          logoClass: 'w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-400 to-amber-300 flex items-center justify-center text-white text-2xl shadow-md transition-all',
-          titleClass: 'text-xl sm:text-2xl text-orange-600 leading-none tracking-wide transition-colors',
-          subClass: 'text-[11px] font-sans-kr text-slate-500 font-bold hidden sm:block',
-          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2 bg-white/85 px-4 py-1.5 rounded-full text-orange-600 text-xs sm:text-sm font-bold border border-orange-200 shadow-sm mb-1.5 transition-all',
+          logoClass: 'w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-orange-400 to-amber-300 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all',
+          titleClass: 'text-2xl sm:text-3xl text-orange-600 leading-none tracking-wide transition-colors',
+          subClass: 'text-xs font-sans-kr text-slate-500 font-bold hidden sm:block mt-0.5',
+          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/85 px-5 py-1.5 rounded-full text-orange-600 text-sm sm:text-base font-bold border border-orange-200 shadow-sm mb-1.5 transition-all',
           greetingText: '✨ 놀이 카드를 눌러 한글 공부를 시작해 보세요! ✨',
-          headingClass: 'text-2xl sm:text-3xl text-slate-800 drop-shadow-sm',
+          headingClass: 'text-2xl sm:text-4xl text-slate-800 drop-shadow-sm',
           headingText: '오늘은 어떤 한글 놀이를 할까요?',
           decorHtml: `
             <div class="absolute top-16 left-6 text-5xl opacity-35 animate-float">☀️</div>
@@ -1711,12 +1712,12 @@
         },
         space: {
           headerClass: 'w-full bg-indigo-950/90 backdrop-blur-md shadow-lg border-b-4 border-purple-400 sticky top-0 z-40 transition-colors duration-300',
-          logoClass: 'w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-400 flex items-center justify-center text-white text-2xl shadow-md ring-2 ring-purple-300 transition-all',
-          titleClass: 'text-xl sm:text-2xl text-amber-300 leading-none tracking-wide transition-colors',
-          subClass: 'text-[11px] font-sans-kr text-indigo-200 font-bold hidden sm:block',
-          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2 bg-indigo-900/90 px-4 py-1.5 rounded-full text-amber-200 text-xs sm:text-sm font-bold border-2 border-purple-400 shadow-md mb-1.5 transition-all',
+          logoClass: 'w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-400 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md ring-2 ring-purple-300 transition-all',
+          titleClass: 'text-2xl sm:text-3xl text-amber-300 leading-none tracking-wide transition-colors',
+          subClass: 'text-xs font-sans-kr text-indigo-200 font-bold hidden sm:block mt-0.5',
+          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2.5 bg-indigo-900/90 px-5 py-1.5 rounded-full text-amber-200 text-sm sm:text-base font-bold border-2 border-purple-400 shadow-md mb-1.5 transition-all',
           greetingText: '🚀 반짝이는 우주 정거장에서 한글 탐험을 떠나볼까요? 🪐',
-          headingClass: 'text-2xl sm:text-3xl text-yellow-200 drop-shadow-[0_3px_10px_rgba(168,85,247,0.7)]',
+          headingClass: 'text-2xl sm:text-4xl text-yellow-200 drop-shadow-[0_3px_10px_rgba(168,85,247,0.7)]',
           headingText: '🌟 우주 비행사님, 어떤 한글 행성으로 출발할까요?',
           decorHtml: `
             <div class="absolute top-16 left-5 text-5xl sm:text-6xl opacity-65 animate-float">🪐</div>
@@ -1729,12 +1730,12 @@
         },
         ocean: {
           headerClass: 'w-full bg-sky-50/95 backdrop-blur-md shadow-sm border-b-4 border-cyan-400 sticky top-0 z-40 transition-colors duration-300',
-          logoClass: 'w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-400 flex items-center justify-center text-white text-2xl shadow-md transition-all',
-          titleClass: 'text-xl sm:text-2xl text-sky-700 leading-none tracking-wide transition-colors',
-          subClass: 'text-[11px] font-sans-kr text-cyan-700 font-bold hidden sm:block',
-          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2 bg-white/90 px-4 py-1.5 rounded-full text-sky-700 text-xs sm:text-sm font-bold border-2 border-cyan-300 shadow-sm mb-1.5 transition-all',
+          logoClass: 'w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-400 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all',
+          titleClass: 'text-2xl sm:text-3xl text-sky-700 leading-none tracking-wide transition-colors',
+          subClass: 'text-xs font-sans-kr text-cyan-700 font-bold hidden sm:block mt-0.5',
+          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/90 px-5 py-1.5 rounded-full text-sky-700 text-sm sm:text-base font-bold border-2 border-cyan-300 shadow-sm mb-1.5 transition-all',
           greetingText: '🐳 시원한 바닷속 용궁 친구들과 한글 헤엄을 쳐보아요! 🫧',
-          headingClass: 'text-2xl sm:text-3xl text-sky-900 drop-shadow-sm',
+          headingClass: 'text-2xl sm:text-4xl text-sky-900 drop-shadow-sm',
           headingText: '🌊 바닷속 탐험대! 어떤 물고기 놀이를 할까요?',
           decorHtml: `
             <div class="absolute top-16 left-6 text-5xl sm:text-6xl opacity-55 animate-float">🐳</div>
@@ -1747,12 +1748,12 @@
         },
         dino: {
           headerClass: 'w-full bg-emerald-50/95 backdrop-blur-md shadow-sm border-b-4 border-emerald-500 sticky top-0 z-40 transition-colors duration-300',
-          logoClass: 'w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-lime-500 flex items-center justify-center text-white text-2xl shadow-md transition-all',
-          titleClass: 'text-xl sm:text-2xl text-emerald-800 leading-none tracking-wide transition-colors',
-          subClass: 'text-[11px] font-sans-kr text-emerald-600 font-bold hidden sm:block',
-          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2 bg-white/90 px-4 py-1.5 rounded-full text-emerald-700 text-xs sm:text-sm font-bold border-2 border-emerald-400 shadow-sm mb-1.5 transition-all',
+          logoClass: 'w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-lime-500 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all',
+          titleClass: 'text-2xl sm:text-3xl text-emerald-800 leading-none tracking-wide transition-colors',
+          subClass: 'text-xs font-sans-kr text-emerald-600 font-bold hidden sm:block mt-0.5',
+          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/90 px-5 py-1.5 rounded-full text-emerald-700 text-sm sm:text-base font-bold border-2 border-emerald-400 shadow-sm mb-1.5 transition-all',
           greetingText: '🦖 크앙! 초록 공룡 숲속에서 한글 발자국을 찾아보아요! 🌴',
-          headingClass: 'text-2xl sm:text-3xl text-emerald-950 drop-shadow-sm',
+          headingClass: 'text-2xl sm:text-4xl text-emerald-950 drop-shadow-sm',
           headingText: '🦕 공룡 탐험대! 오늘은 어떤 한글 놀이를 할까요?',
           decorHtml: `
             <div class="absolute top-16 left-5 text-5xl sm:text-6xl opacity-55 animate-float">🦖</div>
@@ -1764,12 +1765,12 @@
         },
         candy: {
           headerClass: 'w-full bg-pink-50/95 backdrop-blur-md shadow-sm border-b-4 border-pink-400 sticky top-0 z-40 transition-colors duration-300',
-          logoClass: 'w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 to-fuchsia-400 flex items-center justify-center text-white text-2xl shadow-md transition-all',
-          titleClass: 'text-xl sm:text-2xl text-pink-600 leading-none tracking-wide transition-colors',
-          subClass: 'text-[11px] font-sans-kr text-pink-500 font-bold hidden sm:block',
-          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2 bg-white/90 px-4 py-1.5 rounded-full text-pink-600 text-xs sm:text-sm font-bold border-2 border-pink-300 shadow-sm mb-1.5 transition-all',
+          logoClass: 'w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-pink-500 to-fuchsia-400 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all',
+          titleClass: 'text-2xl sm:text-3xl text-pink-600 leading-none tracking-wide transition-colors',
+          subClass: 'text-xs font-sans-kr text-pink-500 font-bold hidden sm:block mt-0.5',
+          pillClass: 'inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/90 px-5 py-1.5 rounded-full text-pink-600 text-sm sm:text-base font-bold border-2 border-pink-300 shadow-sm mb-1.5 transition-all',
           greetingText: '🍭 달콤한 솜사탕 마을에서 사탕처럼 맛있는 한글 놀이! 🧁',
-          headingClass: 'text-2xl sm:text-3xl text-pink-900 drop-shadow-sm',
+          headingClass: 'text-2xl sm:text-4xl text-pink-900 drop-shadow-sm',
           headingText: '🍩 달콤 마을 친구들, 어떤 한글 간식을 골라볼까요?',
           decorHtml: `
             <div class="absolute top-16 left-6 text-5xl sm:text-6xl opacity-55 animate-float">🍭</div>
@@ -2485,6 +2486,7 @@
       if (e.target && e.target.closest('.overflow-y-auto')) return;
       if (e.cancelable) e.preventDefault();
     }, { passive: false });
+
     function triggerCelebration(title, desc, onNextCallback, starReward = 1, autoAdvanceMs = 0) {
       if (celebAutoTimer) {
         clearTimeout(celebAutoTimer);
@@ -2707,22 +2709,22 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-14 py-2">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col md:flex-row items-center justify-around gap-6 lg:gap-12 px-2">
           <!-- Left: Stroke Canvas -->
-          <div class="flex flex-col items-center">
-            <div class="relative w-80 h-80 sm:w-[23rem] sm:h-[23rem] lg:w-[25rem] lg:h-[25rem] rounded-3xl border-4 border-rose-400 bg-amber-50/70 writing-canvas-box shadow-inner overflow-hidden">
+          <div class="h-full max-h-full flex flex-col items-center justify-center">
+            <div class="relative aspect-square h-[76%] max-h-[26rem] min-h-[17rem] rounded-3xl border-4 border-rose-400 bg-amber-50/70 writing-canvas-box shadow-inner overflow-hidden">
               <svg id="ghostStrokeSvg" viewBox="0 0 300 300" class="absolute inset-0 w-full h-full pointer-events-none"></svg>
               <canvas id="writingCanvas" width="300" height="300" class="absolute inset-0 w-full h-full touch-none cursor-crosshair z-10"></canvas>
               <div id="strokeMarkersLayer" class="absolute inset-0 w-full h-full pointer-events-none z-20"></div>
             </div>
-            <p class="mt-3 text-sm sm:text-base font-sans-kr text-slate-600 font-bold">
+            <p class="mt-2.5 text-sm sm:text-base font-sans-kr text-slate-600 font-bold text-center">
               🟡 노란색 강조 획의 <span class="text-rose-600">빨간 번호</span>부터 순서대로 따라 그어보세요!
             </p>
           </div>
 
           <!-- Right: Controls & Character Preview -->
-          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-5 max-w-lg w-full">
-            <div class="w-full flex items-center justify-between gap-2 bg-rose-50 border-2 border-rose-200 px-4 py-2 rounded-2xl">
+          <div class="h-full max-h-[28rem] flex flex-col items-center md:items-start justify-between text-center md:text-left max-w-lg w-full py-1">
+            <div class="w-full flex items-center justify-between gap-2 bg-rose-50 border-2 border-rose-200 px-4 py-2.5 rounded-2xl">
               <select onchange="jumpWritingStage(Number(this.value))" aria-label="단계 선택"
                 class="bg-transparent text-rose-700 font-sans-kr font-bold text-sm sm:text-base outline-none cursor-pointer flex-1">
                 ${stageOptions.map(st => `
@@ -2734,14 +2736,14 @@
               </span>
             </div>
 
-            <div class="flex items-center gap-5">
-              <button onclick="prevWritingChar()" class="btn-toy w-14 h-14 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
+            <div class="flex items-center justify-center md:justify-start gap-5 w-full">
+              <button onclick="prevWritingChar()" class="btn-toy w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
                 <i class="fa-solid fa-chevron-left"></i>
               </button>
-              <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-rose-400 to-red-500 text-white flex items-center justify-center text-7xl sm:text-8xl shadow-lg">
+              <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl bg-gradient-to-br from-rose-400 to-red-500 text-white flex items-center justify-center text-7xl sm:text-8xl shadow-lg">
                 ${item.char}
               </div>
-              <button onclick="nextWritingChar()" class="btn-toy w-14 h-14 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
+              <button onclick="nextWritingChar()" class="btn-toy w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
                 <i class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
@@ -2755,10 +2757,10 @@
             </div>
 
             <div class="flex flex-wrap gap-3 w-full">
-              <button onclick="speak('${item.char}')" class="btn-toy flex-1 bg-sky-500 hover:bg-sky-600 text-white py-3.5 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
+              <button onclick="speak('${item.char}')" class="btn-toy flex-1 bg-sky-500 hover:bg-sky-600 text-white py-3.5 sm:py-4 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
                 <i class="fa-solid fa-volume-high"></i> 소리 듣기
               </button>
-              <button onclick="clearCanvas()" class="btn-toy flex-1 bg-amber-400 hover:bg-amber-500 text-white py-3.5 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
+              <button onclick="clearCanvas()" class="btn-toy flex-1 bg-amber-400 hover:bg-amber-500 text-white py-3.5 sm:py-4 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
                 <i class="fa-solid fa-eraser"></i> 다시 쓰기
               </button>
             </div>
@@ -3225,23 +3227,23 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-14 py-2">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col md:flex-row items-stretch justify-center gap-6 lg:gap-10">
           <!-- Picture Card -->
-          <div class="bg-amber-50 border-4 border-amber-300 rounded-3xl p-7 sm:p-8 text-center max-w-md w-full shadow-md space-y-4">
-            <span class="inline-block bg-amber-400 text-white text-sm font-sans-kr font-bold px-4 py-1.5 rounded-full">그림을 보고 알맞은 글자를 고르세요</span>
-            <div class="py-3 animate-float">
-              ${renderVisualMedia(item, "text-9xl", "w-52 h-52 sm:w-64 sm:h-64")}
+          <div class="flex-1 bg-amber-50 border-4 border-amber-300 rounded-3xl p-5 sm:p-6 text-center shadow-md flex flex-col items-center justify-between">
+            <span class="inline-block bg-amber-400 text-white text-sm sm:text-base font-sans-kr font-bold px-4 py-1.5 rounded-full">그림을 보고 알맞은 글자를 고르세요</span>
+            <div class="flex-1 flex items-center justify-center animate-float">
+              ${renderVisualMedia(item, "text-[7.5rem] sm:text-[9.5rem]", "w-56 h-56 sm:w-72 sm:h-72")}
             </div>
-            <button onclick="speak('${escapeAttr(item.hint)}')" class="btn-toy bg-white border-2 border-amber-300 text-amber-700 px-5 py-2.5 rounded-2xl text-base font-sans-kr font-bold inline-flex items-center gap-2">
+            <button onclick="speak('${escapeAttr(item.hint)}')" class="btn-toy bg-white border-2 border-amber-300 text-amber-700 px-6 py-2.5 rounded-2xl text-base sm:text-lg font-sans-kr font-bold inline-flex items-center gap-2">
               <i class="fa-solid fa-lightbulb text-amber-400"></i> 힌트 듣기
             </button>
           </div>
 
           <!-- Answer Choices -->
-          <div class="grid ${picChoiceCount === 2 ? 'grid-cols-1 max-w-sm' : 'grid-cols-2 max-w-xl'} gap-4 sm:gap-5 w-full">
+          <div class="flex-1 grid ${picChoiceCount === 2 ? 'grid-cols-1 grid-rows-2' : 'grid-cols-2 grid-rows-2'} gap-4 sm:gap-5">
             ${choices.map(opt => `
               <button onclick="checkPicChoice('${escapeAttr(opt)}', '${escapeAttr(item.word)}', this)"
-                class="btn-toy bg-white hover:bg-orange-50 border-4 border-orange-300 rounded-3xl py-8 sm:py-10 px-5 text-4xl sm:text-5xl text-slate-800 font-bold">
+                class="btn-toy h-full w-full bg-white hover:bg-orange-50 border-4 border-orange-300 rounded-3xl p-4 text-4xl sm:text-5xl lg:text-6xl text-slate-800 font-bold flex items-center justify-center">
                 ${opt}
               </button>
             `).join('')}
@@ -3303,44 +3305,44 @@
       const container = document.getElementById('gameContent');
 
       container.innerHTML = `
-        <div class="flex flex-col items-center space-y-5 py-1">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center justify-between gap-4">
           <!-- Equation Display -->
-          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 bg-emerald-50 border-4 border-emerald-300 rounded-3xl px-6 py-4 shadow-sm">
-            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-4xl sm:text-5xl font-bold shadow">
+          <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 bg-emerald-50 border-4 border-emerald-300 rounded-3xl px-8 py-4 shadow-sm w-full">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-5xl sm:text-6xl font-bold shadow">
               ${selectedCho.ch}
             </div>
-            <span class="text-3xl sm:text-4xl text-emerald-600 font-bold">+</span>
-            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-4xl sm:text-5xl font-bold shadow">
+            <span class="text-4xl sm:text-5xl text-emerald-600 font-bold">+</span>
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-5xl sm:text-6xl font-bold shadow">
               ${selectedJung.ch}
             </div>
-            <span class="text-3xl sm:text-4xl text-emerald-600 font-bold">=</span>
+            <span class="text-4xl sm:text-5xl text-emerald-600 font-bold">=</span>
             <button onclick="speak('${combinedChar}'); addStar(1); showToast('${combinedChar}! 별 1개 획득!')"
-              class="btn-toy w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex flex-col items-center justify-center shadow-lg">
-              <span class="text-5xl sm:text-6xl font-bold leading-none">${combinedChar}</span>
-              <span class="text-[11px] font-sans-kr mt-1 bg-white/25 px-2 py-0.5 rounded-full"><i class="fa-solid fa-volume-high"></i> 눌러서 듣기</span>
+              class="btn-toy w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex flex-col items-center justify-center shadow-lg">
+              <span class="text-6xl sm:text-7xl font-bold leading-none">${combinedChar}</span>
+              <span class="text-xs font-sans-kr mt-1 bg-white/25 px-2.5 py-0.5 rounded-full"><i class="fa-solid fa-volume-high"></i> 눌러서 듣기</span>
             </button>
           </div>
 
           <!-- Selectors -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-            <div class="bg-sky-50 border-2 border-sky-200 rounded-2xl p-3.5">
-              <p class="text-sm font-sans-kr font-bold text-sky-700 mb-2">1. 자음 카드 선택</p>
-              <div class="grid grid-cols-5 gap-2">
+          <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 w-full">
+            <div class="bg-sky-50 border-2 border-sky-200 rounded-3xl p-4 sm:p-5 flex flex-col justify-between">
+              <p class="text-base font-sans-kr font-bold text-sky-700 mb-2">1. 자음 카드 선택</p>
+              <div class="flex-1 grid grid-cols-5 gap-2.5">
                 ${combineChoList.map(c => `
                   <button onclick="selectCombineCho(${c.idx})"
-                    class="btn-toy py-2.5 rounded-xl text-2xl font-bold ${c.idx === selectedCho.idx ? 'bg-sky-500 text-white' : 'bg-white text-slate-700 border border-sky-200'}">
+                    class="btn-toy h-full rounded-2xl text-3xl font-bold ${c.idx === selectedCho.idx ? 'bg-sky-500 text-white' : 'bg-white text-slate-700 border border-sky-200'}">
                     ${c.ch}
                   </button>
                 `).join('')}
               </div>
             </div>
 
-            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-3.5">
-              <p class="text-sm font-sans-kr font-bold text-amber-700 mb-2">2. 모음 카드 선택</p>
-              <div class="grid grid-cols-4 gap-2">
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-3xl p-4 sm:p-5 flex flex-col justify-between">
+              <p class="text-base font-sans-kr font-bold text-amber-700 mb-2">2. 모음 카드 선택</p>
+              <div class="flex-1 grid grid-cols-4 gap-2.5">
                 ${combineJungList.map(j => `
                   <button onclick="selectCombineJung(${j.idx})"
-                    class="btn-toy py-2.5 rounded-xl text-2xl font-bold ${j.idx === selectedJung.idx ? 'bg-amber-400 text-white' : 'bg-white text-slate-700 border border-amber-200'}">
+                    class="btn-toy h-full rounded-2xl text-3xl font-bold ${j.idx === selectedJung.idx ? 'bg-amber-400 text-white' : 'bg-white text-slate-700 border border-amber-200'}">
                     ${j.ch}
                   </button>
                 `).join('')}
@@ -3368,23 +3370,23 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center text-center py-2 space-y-5">
-          <div class="bg-sky-50 border-4 border-sky-300 rounded-3xl px-8 py-4 flex flex-col sm:flex-row items-center gap-4">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center justify-between text-center gap-4">
+          <div class="w-full bg-sky-50 border-4 border-sky-300 rounded-3xl px-8 py-4 flex flex-col sm:flex-row items-center justify-center gap-5 shrink-0">
             <button onclick="speak('${escapeAttr(item.word)}')" class="btn-toy w-20 h-20 rounded-full bg-sky-500 hover:bg-sky-600 text-white text-3xl flex items-center justify-center shrink-0">
               <i class="fa-solid fa-volume-high"></i>
             </button>
             <div class="text-center sm:text-left">
-              <h3 class="text-2xl text-sky-800">소리를 듣고 알맞은 카드를 고르세요!</h3>
-              <p class="text-xs sm:text-sm font-sans-kr text-slate-500 font-bold mt-0.5">스피커 버튼을 누르면 다시 들을 수 있어요</p>
+              <h3 class="text-2xl sm:text-3xl text-sky-800">소리를 듣고 알맞은 카드를 고르세요!</h3>
+              <p class="text-sm font-sans-kr text-slate-500 font-bold mt-0.5">스피커 버튼을 누르면 다시 들을 수 있어요</p>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl">
+          <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 w-full">
             ${choices.map(opt => `
               <button onclick="checkListeningChoice('${escapeAttr(opt.word)}', '${escapeAttr(item.word)}', '${escapeAttr(item.hint)}', this)"
-                class="btn-toy bg-white hover:bg-sky-50 border-4 border-sky-200 rounded-3xl p-4 flex flex-col items-center justify-center gap-2">
-                ${renderVisualMedia(opt, "text-5xl", "w-20 h-20")}
-                <span class="text-2xl sm:text-3xl font-bold text-slate-800">${opt.word}</span>
+                class="btn-toy h-full bg-white hover:bg-sky-50 border-4 border-sky-200 rounded-3xl p-4 flex flex-col items-center justify-center gap-3">
+                ${renderVisualMedia(opt, "text-7xl", "w-28 h-28")}
+                <span class="text-3xl sm:text-4xl font-bold text-slate-800">${opt.word}</span>
               </button>
             `).join('')}
           </div>
@@ -3459,9 +3461,12 @@
     function renderWordPuzzle(item) {
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center text-center py-1 space-y-5 w-full max-w-6xl mx-auto">
-          <!-- Top Bar: Sound Button on Top Right -->
-          <div class="w-full flex items-center justify-end">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center justify-between text-center gap-3">
+          <!-- Top Bar: Reset & Sound Button -->
+          <div class="w-full flex items-center justify-between shrink-0">
+            <button onclick="initWordPuzzleMode()" class="btn-toy bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-2xl text-sm sm:text-base font-sans-kr font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-rotate-left"></i> 다시 하기
+            </button>
             <button onclick="speak('${escapeAttr(item.word)}')" title="소리 듣기"
               class="btn-toy bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-2xl text-base sm:text-lg font-sans-kr font-bold flex items-center gap-2 shadow-md">
               <i class="fa-solid fa-volume-high"></i> 소리 듣기
@@ -3469,10 +3474,10 @@
           </div>
 
           <!-- Upper Section: Extra-Large Picture (Left) + Horizontal Answer Slots (Right of Picture) -->
-          <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 px-2">
+          <div class="flex-1 min-h-0 w-full flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-14 px-2">
             <!-- Extra-Large Picture Card positioned on the Left side -->
             <div class="bg-indigo-50 border-4 border-indigo-300 rounded-3xl p-5 sm:p-6 shadow-lg flex items-center justify-center shrink-0">
-              ${renderVisualMedia(item, "text-[8rem] sm:text-[10.5rem]", "w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96")}
+              ${renderVisualMedia(item, "text-[7.5rem] sm:text-[9.5rem]", "w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72")}
             </div>
 
             <!-- Answer Slots arranged horizontally to the Right of the Picture -->
@@ -3480,7 +3485,7 @@
               ${puzzleTargetChars.map((_, idx) => {
                 const placed = puzzlePlaced[idx];
                 return `
-                  <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-4 ${placed ? 'bg-indigo-500 border-indigo-700 text-white shadow-md' : 'border-dashed border-indigo-300 bg-indigo-50/70 text-indigo-300'} flex items-center justify-center text-5xl sm:text-6xl font-bold">
+                  <div class="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl border-4 ${placed ? 'bg-indigo-500 border-indigo-700 text-white shadow-md' : 'border-dashed border-indigo-300 bg-indigo-50/70 text-indigo-300'} flex items-center justify-center text-5xl sm:text-6xl font-bold">
                     ${placed ? placed.ch : (idx + 1)}
                   </div>
                 `;
@@ -3489,18 +3494,14 @@
           </div>
 
           <!-- 9 Choice Tiles Grid -->
-          <div class="grid grid-cols-3 sm:grid-cols-9 gap-3 sm:gap-3.5 pt-2 w-full justify-items-center">
+          <div class="grid grid-cols-3 sm:grid-cols-9 gap-2.5 sm:gap-3.5 w-full shrink-0">
             ${puzzleScrambled.map(tile => `
               <button ${tile.used ? 'disabled' : ''} onclick="pickPuzzleTile(${tile.id})"
-                class="btn-toy w-20 h-20 sm:w-24 sm:h-24 rounded-2xl text-4xl sm:text-5xl font-bold ${tile.used ? 'opacity-25 bg-slate-200 text-slate-400' : 'bg-white border-4 border-indigo-400 text-indigo-700 hover:bg-indigo-50'}">
+                class="btn-toy aspect-square w-full max-w-[6.2rem] mx-auto rounded-2xl text-3xl sm:text-4xl lg:text-5xl font-bold ${tile.used ? 'opacity-25 bg-slate-200 text-slate-400' : 'bg-white border-4 border-indigo-400 text-indigo-700 hover:bg-indigo-50'}">
                 ${tile.ch}
               </button>
             `).join('')}
           </div>
-
-          <button onclick="initWordPuzzleMode()" class="text-sm font-sans-kr font-bold text-slate-400 hover:text-indigo-600 pt-1">
-            <i class="fa-solid fa-rotate-left"></i> 다시 하기
-          </button>
         </div>
       `;
     }
@@ -3633,9 +3634,9 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center space-y-3 w-full">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center gap-3">
           <!-- Top Status HUD -->
-          <div class="w-full flex flex-wrap items-center justify-between gap-2 bg-pink-50 border-3 border-pink-300 rounded-2xl px-4 py-2.5 shadow-xs">
+          <div class="w-full shrink-0 flex flex-wrap items-center justify-between gap-2 bg-pink-50 border-3 border-pink-300 rounded-2xl px-4 py-2.5 shadow-xs">
             <!-- HP Hearts -->
             <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-pink-200">
               <span class="text-xs font-sans-kr font-bold text-slate-500 mr-1">HP</span>
@@ -3668,8 +3669,8 @@
             </div>
           </div>
 
-          <!-- Sky Playfield -->
-          <div id="balloonSkyStage" class="relative w-full h-[400px] sm:h-[460px] lg:h-[500px] rounded-3xl border-4 border-sky-300 bg-gradient-to-b from-sky-200 via-sky-100 to-emerald-100 overflow-hidden shadow-inner select-none transition-all duration-300">
+          <!-- Sky Playfield (Fills remaining 16:10 frame height with zero bottom gap) -->
+          <div id="balloonSkyStage" class="relative w-full flex-1 min-h-[260px] rounded-3xl border-4 border-sky-300 bg-gradient-to-b from-sky-200 via-sky-100 to-emerald-100 overflow-hidden shadow-inner select-none transition-all duration-300">
             <!-- Decorative Clouds -->
             <div class="absolute top-6 left-10 text-white/75 text-5xl pointer-events-none">☁️</div>
             <div class="absolute top-14 right-16 text-white/70 text-6xl pointer-events-none">☁️</div>
@@ -4492,28 +4493,28 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center text-center py-2 space-y-5">
-          <div class="flex items-center gap-4 bg-amber-50 border-2 border-amber-300 px-5 py-2.5 rounded-2xl">
-            ${renderVisualMedia(item, "text-4xl", "w-14 h-14")}
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center justify-between text-center gap-4">
+          <div class="w-full flex items-center justify-center gap-4 bg-amber-50 border-2 border-amber-300 px-6 py-3 rounded-2xl shrink-0">
+            ${renderVisualMedia(item, "text-5xl", "w-16 h-16")}
             <h3 class="text-xl sm:text-2xl text-amber-800">빈 화물칸에 알맞은 글자를 실어 기차를 출발시키세요!</h3>
           </div>
 
-          <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-slate-100 p-5 rounded-3xl border-b-8 border-slate-400 w-full max-w-3xl">
-            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-red-500 text-white flex flex-col items-center justify-center shadow-md">
-              <span class="text-3xl sm:text-4xl">🚂</span>
+          <div class="flex-1 flex flex-wrap items-center justify-center gap-3 sm:gap-4 bg-slate-100 p-6 rounded-3xl border-b-8 border-slate-400 w-full">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-red-500 text-white flex flex-col items-center justify-center shadow-md">
+              <span class="text-4xl sm:text-5xl">🚂</span>
               <span class="text-xs font-sans-kr font-bold">칙칙폭폭</span>
             </div>
             ${chars.map((ch, idx) => idx === missingIdx ? `
-              <div id="trainMissingSlot" class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border-4 border-dashed border-amber-500 bg-amber-100 flex items-center justify-center text-4xl font-bold text-amber-600">?</div>
+              <div id="trainMissingSlot" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-4 border-dashed border-amber-500 bg-amber-100 flex items-center justify-center text-5xl font-bold text-amber-600">?</div>
             ` : `
-              <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-4xl font-bold shadow-md">${ch}</div>
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-amber-400 text-white flex items-center justify-center text-5xl font-bold shadow-md">${ch}</div>
             `).join('')}
           </div>
 
-          <div class="flex items-center justify-center gap-4 pt-1">
+          <div class="flex items-center justify-center gap-5 shrink-0">
             ${options.map(opt => `
               <button onclick="checkTrainCargo('${escapeAttr(opt)}', '${escapeAttr(missingChar)}', '${escapeAttr(item.word)}', this)"
-                class="btn-toy w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border-4 border-amber-400 text-3xl sm:text-4xl text-slate-800 font-bold hover:bg-amber-50">
+                class="btn-toy w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white border-4 border-amber-400 text-4xl sm:text-5xl text-slate-800 font-bold hover:bg-amber-50">
                 ${opt}
               </button>
             `).join('')}
@@ -4578,20 +4579,20 @@
       const targetChar = bingoGrid[bingoTargetIdx];
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 py-2">
-          <div class="bg-cyan-50 border-4 border-cyan-300 rounded-3xl p-6 text-center max-w-xs w-full space-y-4">
-            <span class="bg-cyan-500 text-white px-3 py-1 rounded-full text-xs font-sans-kr font-bold">가로·세로·대각선 한 줄 완성!</span>
-            <h3 class="text-2xl text-cyan-800">들리는 글자를 찾아 눌러요</h3>
-            <button onclick="speak('${escapeAttr(targetChar)}')" class="btn-toy w-20 h-20 mx-auto rounded-full bg-cyan-500 text-white text-3xl flex items-center justify-center">
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col md:flex-row items-center justify-around gap-8">
+          <div class="bg-cyan-50 border-4 border-cyan-300 rounded-3xl p-7 text-center max-w-sm w-full space-y-5">
+            <span class="bg-cyan-500 text-white px-4 py-1.5 rounded-full text-sm font-sans-kr font-bold">가로·세로·대각선 한 줄 완성!</span>
+            <h3 class="text-3xl text-cyan-800">들리는 글자를 찾아 눌러요</h3>
+            <button onclick="speak('${escapeAttr(targetChar)}')" class="btn-toy w-24 h-24 mx-auto rounded-full bg-cyan-500 text-white text-4xl flex items-center justify-center">
               <i class="fa-solid fa-volume-high"></i>
             </button>
-            <p class="text-sm font-sans-kr text-slate-600 font-bold">찾을 글자 힌트: <span class="text-2xl text-cyan-600 ml-1">${targetChar}</span></p>
+            <p class="text-base font-sans-kr text-slate-600 font-bold">찾을 글자 힌트: <span class="text-3xl text-cyan-600 ml-1">${targetChar}</span></p>
           </div>
 
-          <div class="grid grid-cols-3 gap-3 bg-cyan-100 p-4 rounded-3xl border-4 border-cyan-400">
+          <div class="aspect-square h-[84%] max-h-[26rem] grid grid-cols-3 grid-rows-3 gap-3.5 bg-cyan-100 p-4 rounded-3xl border-4 border-cyan-400">
             ${bingoGrid.map((ch, idx) => `
               <button onclick="clickBingoCell(${idx})"
-                class="btn-toy w-20 h-20 sm:w-24 sm:h-24 rounded-2xl text-3xl sm:text-4xl font-bold flex items-center justify-center ${bingoMarked[idx] ? 'bg-cyan-500 text-white border-4 border-cyan-700' : 'bg-white text-slate-800 border-2 border-cyan-200'}">
+                class="btn-toy h-full w-full rounded-2xl text-4xl sm:text-5xl font-bold flex items-center justify-center ${bingoMarked[idx] ? 'bg-cyan-500 text-white border-4 border-cyan-700' : 'bg-white text-slate-800 border-2 border-cyan-200'}">
                 ${bingoMarked[idx] ? '⭐' : ch}
               </button>
             `).join('')}
@@ -4649,17 +4650,17 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center text-center py-2 space-y-5">
-          <div class="bg-lime-50 border-4 border-lime-400 rounded-3xl px-6 py-3.5 flex flex-wrap items-center justify-center gap-3">
-            <span class="text-lg sm:text-xl text-lime-800 font-bold">제시어:</span>
-            <span class="bg-white border-2 border-lime-500 text-lime-700 text-2xl sm:text-3xl px-4 py-1 rounded-2xl font-bold">${targetWord}</span>
-            <span class="text-sm font-sans-kr text-slate-600 font-bold">와 똑같은 글자 카드 3개를 모두 찾으세요! (<span id="foundCountSpan" class="text-lime-600">0</span>/3)</span>
+        <div class="w-full h-full flex-1 min-h-0 flex flex-col items-center justify-between text-center gap-4">
+          <div class="w-full bg-lime-50 border-4 border-lime-400 rounded-3xl px-6 py-3.5 flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <span class="text-xl sm:text-2xl text-lime-800 font-bold">제시어:</span>
+            <span class="bg-white border-2 border-lime-500 text-lime-700 text-3xl sm:text-4xl px-5 py-1 rounded-2xl font-bold">${targetWord}</span>
+            <span class="text-base font-sans-kr text-slate-600 font-bold">와 똑같은 글자 카드 3개를 모두 찾으세요! (<span id="foundCountSpan" class="text-lime-600">0</span>/3)</span>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full max-w-3xl">
+          <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-4 w-full">
             ${cards.map(w => `
               <button onclick="selectSameCard('${escapeAttr(w)}', '${escapeAttr(targetWord)}', this)"
-                class="btn-toy bg-white hover:bg-lime-50 border-4 border-lime-300 rounded-2xl py-5 px-3 text-2xl sm:text-3xl font-bold text-slate-800">
+                class="btn-toy h-full bg-white hover:bg-lime-50 border-4 border-lime-300 rounded-3xl p-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 flex items-center justify-center">
                 ${w}
               </button>
             `).join('')}

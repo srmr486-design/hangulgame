@@ -268,173 +268,173 @@
 
   <!-- Top Header -->
   <header id="mainTopHeader" class="w-full bg-white/90 backdrop-blur-md shadow-sm border-b-4 border-amber-300 sticky top-0 z-40 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-2">
-      <div class="flex items-center gap-2.5">
-        <button id="homeBtn" onclick="navigateHome()" class="hidden btn-toy bg-amber-400 hover:bg-amber-500 text-white px-3.5 py-2 rounded-2xl text-base flex items-center gap-1.5">
+    <div class="max-w-[92rem] mx-auto px-5 sm:px-8 py-3 sm:py-3.5 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <button id="homeBtn" onclick="navigateHome()" class="hidden btn-toy bg-amber-400 hover:bg-amber-500 text-white px-4 py-2.5 rounded-2xl text-lg flex items-center gap-2">
           <i class="fa-solid fa-house"></i>
           <span>홈으로</span>
         </button>
-        <div onclick="navigateHome()" class="flex items-center gap-2 cursor-pointer">
-          <div id="headerBrandLogo" class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-400 to-amber-300 flex items-center justify-center text-white text-2xl shadow-md transition-all">한</div>
+        <div onclick="navigateHome()" class="flex items-center gap-2.5 cursor-pointer">
+          <div id="headerBrandLogo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-orange-400 to-amber-300 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all">한</div>
           <div>
-            <h1 id="headerBrandTitle" class="text-xl sm:text-2xl text-orange-600 leading-none tracking-wide transition-colors">신나는 한글 놀이터</h1>
-            <p id="headerBrandSub" class="text-[11px] font-sans-kr text-slate-500 font-bold hidden sm:block">태블릿 가로 맞춤 9가지 한글 놀이</p>
+            <h1 id="headerBrandTitle" class="text-2xl sm:text-3xl text-orange-600 leading-none tracking-wide transition-colors">신나는 한글 놀이터</h1>
+            <p id="headerBrandSub" class="text-xs font-sans-kr text-slate-500 font-bold hidden sm:block mt-0.5">태블릿 가로 맞춤 9가지 한글 놀이</p>
           </div>
         </div>
       </div>
 
-      <div id="currentModeBadge" class="hidden md:flex items-center gap-2 bg-orange-100 border-2 border-orange-300 px-4 py-1 rounded-full text-orange-700 text-base">
+      <div id="currentModeBadge" class="hidden md:flex items-center gap-2 bg-orange-100 border-2 border-orange-300 px-5 py-1.5 rounded-full text-orange-700 text-lg font-bold">
         <i id="modeBadgeIcon" class="fa-solid fa-pencil"></i>
         <span id="modeBadgeTitle">한글 따라쓰기</span>
       </div>
 
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2.5">
         <button id="homeShopBtn" onclick="openShopModal('pet')" title="별빛 상점 열기"
-          class="btn-toy px-3.5 h-10 rounded-full bg-gradient-to-r from-amber-400 to-pink-500 border-2 border-white text-white flex items-center justify-center gap-1.5 font-sans-kr font-bold text-xs sm:text-sm shadow-md">
+          class="btn-toy px-4 h-11 rounded-full bg-gradient-to-r from-amber-400 to-pink-500 border-2 border-white text-white flex items-center justify-center gap-1.5 font-sans-kr font-bold text-sm sm:text-base shadow-md">
           <i class="fa-solid fa-store"></i>
           <span>별빛 상점</span>
         </button>
 
         <button id="globalSheetBtn" onclick="openSheetModal()" title="전체 학습 설정 및 단어장 연동"
-          class="px-3 h-10 rounded-full bg-emerald-100 border-2 border-emerald-400 text-emerald-700 flex items-center justify-center gap-1.5 hover:bg-emerald-200 transition font-sans-kr font-bold text-xs">
+          class="px-3.5 h-11 rounded-full bg-emerald-100 border-2 border-emerald-400 text-emerald-700 flex items-center justify-center gap-1.5 hover:bg-emerald-200 transition font-sans-kr font-bold text-sm">
           <i class="fa-solid fa-gear"></i>
           <span id="globalSheetLabel" class="hidden sm:inline">전체설정</span>
         </button>
 
-        <div onclick="openShopModal('pet')" title="클릭해서 상점 열기" class="cursor-pointer bg-yellow-100 border-2 border-yellow-400 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-inner hover:bg-yellow-200 transition">
-          <i class="fa-solid fa-star text-yellow-500 text-lg animate-pulse"></i>
-          <span id="starCount" class="text-lg text-yellow-700 font-bold">0</span>
+        <div onclick="openShopModal('pet')" title="클릭해서 상점 열기" class="cursor-pointer bg-yellow-100 border-2 border-yellow-400 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-inner hover:bg-yellow-200 transition">
+          <i class="fa-solid fa-star text-yellow-500 text-xl animate-pulse"></i>
+          <span id="starCount" class="text-xl text-yellow-700 font-bold">0</span>
         </div>
 
         <button id="muteBtn" onclick="cycleVolume()" title="음량 조절"
-          class="px-3 h-10 rounded-full bg-sky-100 border-2 border-sky-300 text-sky-700 flex items-center justify-center gap-1.5 hover:bg-sky-200 transition font-sans-kr font-bold text-xs">
-          <i id="muteIcon" class="fa-solid fa-volume-high text-base"></i>
+          class="px-3.5 h-11 rounded-full bg-sky-100 border-2 border-sky-300 text-sky-700 flex items-center justify-center gap-1.5 hover:bg-sky-200 transition font-sans-kr font-bold text-sm">
+          <i id="muteIcon" class="fa-solid fa-volume-high text-lg"></i>
           <span id="volumeLabel">100%</span>
         </button>
 
         <button onclick="toggleFullScreen()" title="전체화면 전환"
-          class="w-10 h-10 rounded-full bg-amber-100 border-2 border-amber-300 text-amber-700 flex items-center justify-center hover:bg-amber-200 transition">
-          <i id="fullscreenIcon" class="fa-solid fa-expand text-base"></i>
+          class="w-11 h-11 rounded-full bg-amber-100 border-2 border-amber-300 text-amber-700 flex items-center justify-center hover:bg-amber-200 transition">
+          <i id="fullscreenIcon" class="fa-solid fa-expand text-lg"></i>
         </button>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 py-3 sm:py-4 flex flex-col justify-center">
+  <main class="relative z-10 flex-1 max-w-[92rem] w-full mx-auto px-5 sm:px-8 lg:px-10 py-4 sm:py-6 flex flex-col justify-center">
     <!-- HOME MENU VIEW -->
     <section id="homeView" class="w-full animate-pop">
-      <div class="text-center mb-4">
-        <div id="homeTopPill" class="inline-flex flex-wrap items-center justify-center gap-2 bg-white/85 px-4 py-1.5 rounded-full text-orange-600 text-xs sm:text-sm font-bold border border-orange-200 shadow-sm mb-1.5 transition-all">
+      <div class="text-center mb-5 sm:mb-7">
+        <div id="homeTopPill" class="inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/85 px-5 py-2 rounded-full text-orange-600 text-sm sm:text-base font-bold border border-orange-200 shadow-sm mb-2 transition-all">
           <span id="homeThemeGreeting">✨ 놀이 카드를 눌러 한글 공부를 시작해 보세요! ✨</span>
-          <button onclick="openShopModal('pet')" class="bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-0.5 rounded-full text-xs font-sans-kr font-bold shadow-xs hover:scale-105 transition flex items-center gap-1">
+          <button onclick="openShopModal('pet')" class="bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3.5 py-1 rounded-full text-xs sm:text-sm font-sans-kr font-bold shadow-xs hover:scale-105 transition flex items-center gap-1">
             <span id="homePetMiniBadge">🥚 단짝 펫 & 상점</span>
           </button>
         </div>
-        <h2 id="homeMainHeading" class="text-2xl sm:text-3xl text-slate-800 drop-shadow-sm">오늘은 어떤 한글 놀이를 할까요?</h2>
+        <h2 id="homeMainHeading" class="text-3xl sm:text-4xl text-slate-800 drop-shadow-sm">오늘은 어떤 한글 놀이를 할까요?</h2>
       </div>
 
-      <div id="homeModeGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-        <button onclick="startMode(1)" class="btn-toy bg-gradient-to-br from-rose-400 to-red-500 text-white p-4 rounded-3xl text-left flex items-center gap-3.5">
-          <div class="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center text-3xl shrink-0">✍️</div>
+      <div id="homeModeGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+        <button onclick="startMode(1)" class="btn-toy bg-gradient-to-br from-rose-400 to-red-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">✍️</div>
           <div>
-            <span class="text-[11px] bg-white/25 px-2 py-0.5 rounded-full font-sans-kr">1단계 · 쓰기</span>
-            <h3 class="text-xl mt-0.5">1. 한글 따라쓰기</h3>
-            <p class="text-xs text-rose-100 font-sans-kr">자음·모음·가~히 140자 획순</p>
+            <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">1단계 · 쓰기</span>
+            <h3 class="text-2xl sm:text-3xl mt-1">1. 한글 따라쓰기</h3>
+            <p class="text-sm sm:text-base text-rose-100 font-sans-kr mt-0.5">자음·모음·가~히 140자 획순</p>
           </div>
         </button>
 
-        <button onclick="startMode(2)" class="btn-toy bg-gradient-to-br from-amber-400 to-orange-500 text-white p-4 rounded-3xl text-left flex items-center gap-3.5">
-          <div class="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center text-3xl shrink-0">🍎</div>
+        <button onclick="startMode(2)" class="btn-toy bg-gradient-to-br from-amber-400 to-orange-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🍎</div>
           <div>
-            <span class="text-[11px] bg-white/25 px-2 py-0.5 rounded-full font-sans-kr">2단계 · 어휘</span>
-            <h3 class="text-xl mt-0.5">2. 그림 보고 찾기</h3>
-            <p class="text-xs text-amber-100 font-sans-kr">그림을 보고 알맞은 글자 찾기</p>
+            <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">2단계 · 어휘</span>
+            <h3 class="text-2xl sm:text-3xl mt-1">2. 그림 보고 찾기</h3>
+            <p class="text-sm sm:text-base text-amber-100 font-sans-kr mt-0.5">그림을 보고 알맞은 글자 찾기</p>
           </div>
         </button>
 
-        <button onclick="startMode(3)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 rounded-3xl text-left flex items-center gap-3.5 opacity-75 cursor-not-allowed shadow-inner">
-          <div class="w-14 h-14 rounded-2xl bg-slate-300/70 flex items-center justify-center text-3xl shrink-0 grayscale">🧩</div>
+        <button onclick="startMode(3)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🧩</div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] bg-slate-300 text-slate-600 px-2 py-0.5 rounded-full font-sans-kr font-bold">3단계 · 원리</span>
-              <span class="text-[10px] bg-slate-500 text-white px-2 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
+              <span class="text-xs sm:text-sm bg-slate-300 text-slate-600 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">3단계 · 원리</span>
+              <span class="text-xs bg-slate-500 text-white px-2.5 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
             </div>
-            <h3 class="text-xl mt-0.5 text-slate-500">3. 자모 조합 놀이</h3>
-            <p class="text-xs text-slate-400 font-sans-kr">ㄱ + ㅏ = 가 글자 합치기</p>
+            <h3 class="text-2xl sm:text-3xl mt-1 text-slate-500">3. 자모 조합 놀이</h3>
+            <p class="text-sm sm:text-base text-slate-400 font-sans-kr mt-0.5">ㄱ + ㅏ = 가 글자 합치기</p>
           </div>
         </button>
 
-        <button onclick="startMode(4)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 rounded-3xl text-left flex items-center gap-3.5 opacity-75 cursor-not-allowed shadow-inner">
-          <div class="w-14 h-14 rounded-2xl bg-slate-300/70 flex items-center justify-center text-3xl shrink-0 grayscale">🎧</div>
+        <button onclick="startMode(4)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🎧</div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] bg-slate-300 text-slate-600 px-2 py-0.5 rounded-full font-sans-kr font-bold">4단계 · 듣기</span>
-              <span class="text-[10px] bg-slate-500 text-white px-2 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
+              <span class="text-xs sm:text-sm bg-slate-300 text-slate-600 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">4단계 · 듣기</span>
+              <span class="text-xs bg-slate-500 text-white px-2.5 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
             </div>
-            <h3 class="text-xl mt-0.5 text-slate-500">4. 듣고 맞히기</h3>
-            <p class="text-xs text-slate-400 font-sans-kr">소리를 듣고 정답 낱말 고르기</p>
+            <h3 class="text-2xl sm:text-3xl mt-1 text-slate-500">4. 듣고 맞히기</h3>
+            <p class="text-sm sm:text-base text-slate-400 font-sans-kr mt-0.5">소리를 듣고 정답 낱말 고르기</p>
           </div>
         </button>
 
-        <button onclick="startMode(5)" class="btn-toy bg-gradient-to-br from-indigo-400 to-violet-500 text-white p-4 rounded-3xl text-left flex items-center gap-3.5">
-          <div class="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center text-3xl shrink-0">🎲</div>
+        <button onclick="startMode(5)" class="btn-toy bg-gradient-to-br from-indigo-400 to-violet-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🎲</div>
           <div>
-            <span class="text-[11px] bg-white/25 px-2 py-0.5 rounded-full font-sans-kr">5단계 · 순서</span>
-            <h3 class="text-xl mt-0.5">5. 글자 퍼즐</h3>
-            <p class="text-xs text-indigo-100 font-sans-kr">흩어진 글자를 순서대로 조립</p>
+            <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">5단계 · 순서</span>
+            <h3 class="text-2xl sm:text-3xl mt-1">5. 글자 퍼즐</h3>
+            <p class="text-sm sm:text-base text-indigo-100 font-sans-kr mt-0.5">흩어진 글자를 순서대로 조립</p>
           </div>
         </button>
 
-        <button onclick="startMode(6)" class="btn-toy bg-gradient-to-br from-pink-400 to-fuchsia-500 text-white p-4 rounded-3xl text-left flex items-center gap-3.5">
-          <div class="w-14 h-14 rounded-2xl bg-white/25 flex items-center justify-center text-3xl shrink-0">🎈</div>
+        <button onclick="startMode(6)" class="btn-toy bg-gradient-to-br from-pink-400 to-fuchsia-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🎈</div>
           <div>
-            <span class="text-[11px] bg-white/25 px-2 py-0.5 rounded-full font-sans-kr">6단계 · 순발력</span>
-            <h3 class="text-xl mt-0.5">6. 풍선 터뜨리기</h3>
-            <p class="text-xs text-pink-100 font-sans-kr">정답이 적힌 풍선을 팡팡!</p>
+            <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">6단계 · 순발력</span>
+            <h3 class="text-2xl sm:text-3xl mt-1">6. 풍선 터뜨리기</h3>
+            <p class="text-sm sm:text-base text-pink-100 font-sans-kr mt-0.5">정답이 적힌 풍선을 팡팡!</p>
           </div>
         </button>
 
-        <button onclick="startMode(7)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 rounded-3xl text-left flex items-center gap-3.5 opacity-75 cursor-not-allowed shadow-inner">
-          <div class="w-14 h-14 rounded-2xl bg-slate-300/70 flex items-center justify-center text-3xl shrink-0 grayscale">🚂</div>
+        <button onclick="startMode(7)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🚂</div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] bg-slate-300 text-slate-600 px-2 py-0.5 rounded-full font-sans-kr font-bold">7단계 · 완성</span>
-              <span class="text-[10px] bg-slate-500 text-white px-2 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
+              <span class="text-xs sm:text-sm bg-slate-300 text-slate-600 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">7단계 · 완성</span>
+              <span class="text-xs bg-slate-500 text-white px-2.5 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
             </div>
-            <h3 class="text-xl mt-0.5 text-slate-500">7. 낱말 기차</h3>
-            <p class="text-xs text-slate-400 font-sans-kr">빈칸에 글자를 실어 기차 출발!</p>
+            <h3 class="text-2xl sm:text-3xl mt-1 text-slate-500">7. 낱말 기차</h3>
+            <p class="text-sm sm:text-base text-slate-400 font-sans-kr mt-0.5">빈칸에 글자를 실어 기차 출발!</p>
           </div>
         </button>
 
-        <button onclick="startMode(8)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 rounded-3xl text-left flex items-center gap-3.5 opacity-75 cursor-not-allowed shadow-inner">
-          <div class="w-14 h-14 rounded-2xl bg-slate-300/70 flex items-center justify-center text-3xl shrink-0 grayscale">🎯</div>
+        <button onclick="startMode(8)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🎯</div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] bg-slate-300 text-slate-600 px-2 py-0.5 rounded-full font-sans-kr font-bold">8단계 · 집중</span>
-              <span class="text-[10px] bg-slate-500 text-white px-2 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
+              <span class="text-xs sm:text-sm bg-slate-300 text-slate-600 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">8단계 · 집중</span>
+              <span class="text-xs bg-slate-500 text-white px-2.5 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
             </div>
-            <h3 class="text-xl mt-0.5 text-slate-500">8. 글자 빙고</h3>
-            <p class="text-xs text-slate-400 font-sans-kr">들리는 글자를 찾아 한 줄 빙고!</p>
+            <h3 class="text-2xl sm:text-3xl mt-1 text-slate-500">8. 글자 빙고</h3>
+            <p class="text-sm sm:text-base text-slate-400 font-sans-kr mt-0.5">들리는 글자를 찾아 한 줄 빙고!</p>
           </div>
         </button>
 
-        <button onclick="startMode(9)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 rounded-3xl text-left flex items-center gap-3.5 opacity-75 cursor-not-allowed shadow-inner">
-          <div class="w-14 h-14 rounded-2xl bg-slate-300/70 flex items-center justify-center text-3xl shrink-0 grayscale">🔍</div>
+        <button onclick="startMode(9)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🔍</div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] bg-slate-300 text-slate-600 px-2 py-0.5 rounded-full font-sans-kr font-bold">9단계 · 변별</span>
-              <span class="text-[10px] bg-slate-500 text-white px-2 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
+              <span class="text-xs sm:text-sm bg-slate-300 text-slate-600 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">9단계 · 변별</span>
+              <span class="text-xs bg-slate-500 text-white px-2.5 py-0.5 rounded-full font-sans-kr font-bold"><i class="fa-solid fa-lock mr-0.5"></i>업데이트중</span>
             </div>
-            <h3 class="text-xl mt-0.5 text-slate-500">9. 같은 글자 찾기</h3>
-            <p class="text-xs text-slate-400 font-sans-kr">똑같이 생긴 글자 모두 고르기</p>
+            <h3 class="text-2xl sm:text-3xl mt-1 text-slate-500">9. 같은 글자 찾기</h3>
+            <p class="text-sm sm:text-base text-slate-400 font-sans-kr mt-0.5">똑같이 생긴 글자 모두 고르기</p>
           </div>
         </button>
       </div>
     </section>
 
     <!-- GAME STAGE CONTAINER -->
-    <section id="gameView" class="hidden w-full bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-4 sm:p-6 animate-pop">
+    <section id="gameView" class="hidden w-full bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-5 sm:p-8 lg:p-10 animate-pop">
       <div id="gameContent" class="w-full"></div>
     </section>
   </main>
@@ -1105,7 +1105,7 @@
       { f: 659.25, b: 261.63, d: 1 }, { f: 783.99, b: 0,      d: 1 }, { f: 880.00, b: 349.23, d: 2 },
       { f: 783.99, b: 329.63, d: 1 }, { f: 659.25, b: 0,      d: 1 }, { f: 587.33, b: 293.66, d: 2 },
       // Bar 4: Peaceful resolution
-      { f: 659.25, b: 329.63, d: 1 }, { f: 587.33, b: 0,      d: 1 }, { f: 523.25, b: 261.63, d: 1 }, { f: 493.88, b: 0, d: 1 },
+      { f: 659.25, b: 329.63, d: 1 }, { f: 587.33, b: 0,      d: 1 }, { f: 523.25, b: 261.63, d: 1 }, { f: 493.88, b: 0,      d: 1 },
       { f: 523.25, b: 261.63, d: 3 }, { f: 0,      b: 0,      d: 1 }
     ];
 
@@ -1443,20 +1443,20 @@
        STAR SHOP SYSTEM (1. PETS, 2. SKINS/THEMES, 3. GACHA, 5. COUPONS)
        ========================================================= */
     const PET_EGG_CATALOG = [
-      { id: 'dino',    eggIcon: '🥚', name: '초록 공룡',     stages: ['🥚', '🦖', '🦕', '🐉', '👑🐉'], stageNames: ['신비한 알', '아기 공룡', '씩씩한 공룡', '날개 공룡', '황금 드래곤 킹'] },
-      { id: 'chick',   eggIcon: '🥚', name: '황금 병아리',   stages: ['🥚', '🐣', '🐥', '🐓', '🦅✨'], stageNames: ['따뜻한 알', '금간 병아리', '뽀송 병아리', '무지개 꼬꼬', '불사조 피닉스'] },
+      { id: 'dino',    eggIcon: '🥚', name: '초록 공룡',      stages: ['🥚', '🦖', '🦕', '🐉', '👑🐉'], stageNames: ['신비한 알', '아기 공룡', '씩씩한 공룡', '날개 공룡', '황금 드래곤 킹'] },
+      { id: 'chick',   eggIcon: '🥚', name: '황금 병아리',    stages: ['🥚', '🐣', '🐥', '🐓', '🦅✨'], stageNames: ['따뜻한 알', '금간 병아리', '뽀송 병아리', '무지개 꼬꼬', '불사조 피닉스'] },
       { id: 'unicorn', eggIcon: '🥚', name: '무지개 유니콘', stages: ['🥚', '🐴', '🦄', '🦄🌈', '👑🦄'], stageNames: ['별빛 알', '아기 조랑말', '뿔난 유니콘', '무지개 유니콘', '천사 페가수스'] },
-      { id: 'tiger',   eggIcon: '🥚', name: '백두 호랑이',   stages: ['🥚', '🐱', '🐯', '🐅🔥', '👑🐯'], stageNames: ['줄무늬 알', '아기 고양이', '씩씩한 호랑이', '불꽃 백호', '산신령 호랑이왕'] },
-      { id: 'whale',   eggIcon: '🥚', name: '바다 돌고래',   stages: ['🥚', '🐟', '🐬', '🐳', '👑🐋'], stageNames: ['물방울 알', '아기 물고기', '점프 돌고래', '대왕 고래', '바다의 수호신'] },
-      { id: 'rabbit',  eggIcon: '🥚', name: '달나라 토끼',   stages: ['🥚', '🐭', '🐰', '🐇🌙', '👑🐰'], stageNames: ['하얀 알', '꼬마 토끼', '깡총 토끼', '달빛 토끼', '은하수 토끼왕'] },
+      { id: 'tiger',   eggIcon: '🥚', name: '백두 호랑이',    stages: ['🥚', '🐱', '🐯', '🐅🔥', '👑🐯'], stageNames: ['줄무늬 알', '아기 고양이', '씩씩한 호랑이', '불꽃 백호', '산신령 호랑이왕'] },
+      { id: 'whale',   eggIcon: '🥚', name: '바다 돌고래',    stages: ['🥚', '🐟', '🐬', '🐳', '👑🐋'], stageNames: ['물방울 알', '아기 물고기', '점프 돌고래', '대왕 고래', '바다의 수호신'] },
+      { id: 'rabbit',  eggIcon: '🥚', name: '달나라 토끼',    stages: ['🥚', '🐭', '🐰', '🐇🌙', '👑🐰'], stageNames: ['하얀 알', '꼬마 토끼', '깡총 토끼', '달빛 토끼', '은하수 토끼왕'] },
       { id: 'bear',    eggIcon: '🥚', name: '꿀단지 곰돌이', stages: ['🥚', '🐻', '🐻‍❄️', '🐼', '👑🐻'], stageNames: ['포근한 알', '아기 곰돌이', '북극곰 친구', '대왕 판다', '숲속의 곰왕자'] },
-      { id: 'fox',     eggIcon: '🥚', name: '구미호 여우',   stages: ['🥚', '🐶', '🦊', '🦊✨', '👑🦊'], stageNames: ['주황 알', '아기 강아지', '영리한 여우', '별꼬리 여우', '천년 여우신선'] },
-      { id: 'robot',   eggIcon: '🥚', name: '우주 로봇',     stages: ['🥚', '🤖', '🦾', '🚀', '🛸👑'], stageNames: ['강철 캡슐', '꼬마 로봇', '변신 로봇', '우주 로켓', '은하계 사령관'] },
-      { id: 'owl',     eggIcon: '🥚', name: '지혜 부엉이',   stages: ['🥚', '🐦', '🦉', '🦚', '👑🦉'], stageNames: ['밤하늘 알', '아기 새', '똑똑 부엉이', '화려한 공작', '마법사 대부엉이'] }
+      { id: 'fox',     eggIcon: '🥚', name: '구미호 여우',    stages: ['🥚', '🐶', '🦊', '🦊✨', '👑🦊'], stageNames: ['주황 알', '아기 강아지', '영리한 여우', '별꼬리 여우', '천년 여우신선'] },
+      { id: 'robot',   eggIcon: '🥚', name: '우주 로봇',      stages: ['🥚', '🤖', '🦾', '🚀', '🛸👑'], stageNames: ['강철 캡슐', '꼬마 로봇', '변신 로봇', '우주 로켓', '은하계 사령관'] },
+      { id: 'owl',     eggIcon: '🥚', name: '지혜 부엉이',    stages: ['🥚', '🐦', '🦉', '🦚', '👑🦉'], stageNames: ['밤하늘 알', '아기 새', '똑똑 부엉이', '화려한 공작', '마법사 대부엉이'] }
     ];
 
     const PET_SNACKS = [
-      { id: 'apple',   icon: '🍎', name: '아삭아삭 사과',   exp: 10,   cost: 10,  desc: '경험치 +10' },
+      { id: 'apple',   icon: '🍎', name: '아삭아삭 사과',    exp: 10,   cost: 10,  desc: '경험치 +10' },
       { id: 'cake',    icon: '🍰', name: '달콤 딸기케이크', exp: 100,  cost: 80,  desc: '경험치 +100' },
       { id: 'rainbow', icon: '🍱', name: '특제 무지개도시락', exp: 500, cost: 350, desc: '경험치 +500' },
       { id: 'feast',   icon: '👑', name: '황금 만찬 세트',  exp: 1000, cost: 650, desc: '경험치 +1,000' }
@@ -2318,6 +2318,48 @@
       }, 2400);
     }
 
+    // Playful wooden/toy button press sound effect
+    function playButtonClickSound() {
+      if (currentVolume === 0) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!sharedAudioCtx) {
+          sharedAudioCtx = new AudioCtx();
+        }
+        if (sharedAudioCtx.state === 'suspended') {
+          sharedAudioCtx.resume().catch(() => {});
+        }
+
+        const now = sharedAudioCtx.currentTime;
+        const osc = sharedAudioCtx.createOscillator();
+        const gain = sharedAudioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(860, now + 0.045);
+
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(currentVolume * 0.38, now + 0.008);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.075);
+
+        osc.connect(gain);
+        gain.connect(sharedAudioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } catch (e) {
+        // Ignore audio errors on restricted devices
+      }
+    }
+
+    // Attach global button click sound to all interactive buttons (except floating balloons which have their own pop SFX)
+    document.addEventListener('pointerdown', (e) => {
+      const btn = e.target && e.target.closest('button, [role="button"], .btn-toy');
+      if (!btn || btn.disabled || btn.getAttribute('aria-disabled') === 'true') return;
+      if (btn.id && btn.id.startsWith('balloonItem_')) return;
+      playButtonClickSound();
+    }, { passive: true });
+
     const modeMeta = {
       1: { title: '1. 한글 따라쓰기', icon: 'fa-solid fa-pencil' },
       2: { title: '2. 그림 보고 찾기', icon: 'fa-solid fa-image' },
@@ -2655,58 +2697,58 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-10 py-1">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-14 py-2">
           <!-- Left: Stroke Canvas -->
           <div class="flex flex-col items-center">
-            <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl border-4 border-rose-400 bg-amber-50/70 writing-canvas-box shadow-inner overflow-hidden">
+            <div class="relative w-80 h-80 sm:w-[23rem] sm:h-[23rem] lg:w-[25rem] lg:h-[25rem] rounded-3xl border-4 border-rose-400 bg-amber-50/70 writing-canvas-box shadow-inner overflow-hidden">
               <svg id="ghostStrokeSvg" viewBox="0 0 300 300" class="absolute inset-0 w-full h-full pointer-events-none"></svg>
               <canvas id="writingCanvas" width="300" height="300" class="absolute inset-0 w-full h-full touch-none cursor-crosshair z-10"></canvas>
               <div id="strokeMarkersLayer" class="absolute inset-0 w-full h-full pointer-events-none z-20"></div>
             </div>
-            <p class="mt-2.5 text-xs sm:text-sm font-sans-kr text-slate-600 font-bold">
+            <p class="mt-3 text-sm sm:text-base font-sans-kr text-slate-600 font-bold">
               🟡 노란색 강조 획의 <span class="text-rose-600">빨간 번호</span>부터 순서대로 따라 그어보세요!
             </p>
           </div>
 
           <!-- Right: Controls & Character Preview -->
-          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4 max-w-md w-full">
-            <div class="w-full flex items-center justify-between gap-2 bg-rose-50 border-2 border-rose-200 px-3 py-1.5 rounded-2xl">
+          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-5 max-w-lg w-full">
+            <div class="w-full flex items-center justify-between gap-2 bg-rose-50 border-2 border-rose-200 px-4 py-2 rounded-2xl">
               <select onchange="jumpWritingStage(Number(this.value))" aria-label="단계 선택"
-                class="bg-transparent text-rose-700 font-sans-kr font-bold text-xs sm:text-sm outline-none cursor-pointer flex-1">
+                class="bg-transparent text-rose-700 font-sans-kr font-bold text-sm sm:text-base outline-none cursor-pointer flex-1">
                 ${stageOptions.map(st => `
                   <option value="${st.startIndex}" ${st.label === item.label ? 'selected' : ''}>${st.label}</option>
                 `).join('')}
               </select>
-              <span class="text-xs font-sans-kr font-bold text-rose-600 bg-white px-2.5 py-0.5 rounded-full border border-rose-200 shrink-0">
+              <span class="text-sm font-sans-kr font-bold text-rose-600 bg-white px-3 py-0.5 rounded-full border border-rose-200 shrink-0">
                 ${writingIndex + 1} / ${writingChars.length}
               </span>
             </div>
 
-            <div class="flex items-center gap-4">
-              <button onclick="prevWritingChar()" class="btn-toy w-12 h-12 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xl flex items-center justify-center">
+            <div class="flex items-center gap-5">
+              <button onclick="prevWritingChar()" class="btn-toy w-14 h-14 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
                 <i class="fa-solid fa-chevron-left"></i>
               </button>
-              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-gradient-to-br from-rose-400 to-red-500 text-white flex items-center justify-center text-6xl sm:text-7xl shadow-lg">
+              <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-rose-400 to-red-500 text-white flex items-center justify-center text-7xl sm:text-8xl shadow-lg">
                 ${item.char}
               </div>
-              <button onclick="nextWritingChar()" class="btn-toy w-12 h-12 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xl flex items-center justify-center">
+              <button onclick="nextWritingChar()" class="btn-toy w-14 h-14 rounded-2xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-2xl flex items-center justify-center">
                 <i class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
 
-            <div class="w-full bg-slate-100 rounded-2xl p-3 border border-slate-200">
-              <div class="flex items-center justify-between text-xs font-sans-kr font-bold text-slate-600 mb-1">
+            <div class="w-full bg-slate-100 rounded-2xl p-4 border border-slate-200">
+              <div class="flex items-center justify-between text-sm font-sans-kr font-bold text-slate-600 mb-1">
                 <span>획순 진행 상태</span>
                 <span id="strokeProgressText" class="text-rose-600">0 / ${item.strokes.length} 획</span>
               </div>
-              <p class="text-xs font-sans-kr text-slate-500">손가락으로 칸 안에서 끝까지 그으면 예쁜 글씨로 자동 다듬어져요!</p>
+              <p class="text-sm font-sans-kr text-slate-500">손가락으로 칸 안에서 끝까지 그으면 예쁜 글씨로 자동 다듬어져요!</p>
             </div>
 
-            <div class="flex flex-wrap gap-2.5 w-full">
-              <button onclick="speak('${item.char}')" class="btn-toy flex-1 bg-sky-500 hover:bg-sky-600 text-white py-3 px-4 rounded-2xl text-lg flex items-center justify-center gap-2">
+            <div class="flex flex-wrap gap-3 w-full">
+              <button onclick="speak('${item.char}')" class="btn-toy flex-1 bg-sky-500 hover:bg-sky-600 text-white py-3.5 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
                 <i class="fa-solid fa-volume-high"></i> 소리 듣기
               </button>
-              <button onclick="clearCanvas()" class="btn-toy flex-1 bg-amber-400 hover:bg-amber-500 text-white py-3 px-4 rounded-2xl text-lg flex items-center justify-center gap-2">
+              <button onclick="clearCanvas()" class="btn-toy flex-1 bg-amber-400 hover:bg-amber-500 text-white py-3.5 px-5 rounded-2xl text-xl flex items-center justify-center gap-2">
                 <i class="fa-solid fa-eraser"></i> 다시 쓰기
               </button>
             </div>
@@ -3173,23 +3215,23 @@
 
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-10 py-2">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-14 py-2">
           <!-- Picture Card -->
-          <div class="bg-amber-50 border-4 border-amber-300 rounded-3xl p-6 text-center max-w-sm w-full shadow-md space-y-3">
-            <span class="inline-block bg-amber-400 text-white text-xs font-sans-kr font-bold px-3 py-1 rounded-full">그림을 보고 알맞은 글자를 고르세요</span>
-            <div class="py-2 animate-float">
-              ${renderVisualMedia(item, "text-8xl", "w-44 h-44 sm:w-52 sm:h-52")}
+          <div class="bg-amber-50 border-4 border-amber-300 rounded-3xl p-7 sm:p-8 text-center max-w-md w-full shadow-md space-y-4">
+            <span class="inline-block bg-amber-400 text-white text-sm font-sans-kr font-bold px-4 py-1.5 rounded-full">그림을 보고 알맞은 글자를 고르세요</span>
+            <div class="py-3 animate-float">
+              ${renderVisualMedia(item, "text-9xl", "w-52 h-52 sm:w-64 sm:h-64")}
             </div>
-            <button onclick="speak('${escapeAttr(item.hint)}')" class="btn-toy bg-white border-2 border-amber-300 text-amber-700 px-4 py-2 rounded-2xl text-sm font-sans-kr font-bold inline-flex items-center gap-1.5">
+            <button onclick="speak('${escapeAttr(item.hint)}')" class="btn-toy bg-white border-2 border-amber-300 text-amber-700 px-5 py-2.5 rounded-2xl text-base font-sans-kr font-bold inline-flex items-center gap-2">
               <i class="fa-solid fa-lightbulb text-amber-400"></i> 힌트 듣기
             </button>
           </div>
 
           <!-- Answer Choices -->
-          <div class="grid ${picChoiceCount === 2 ? 'grid-cols-1 max-w-xs' : 'grid-cols-2 max-w-md'} gap-3.5 w-full">
+          <div class="grid ${picChoiceCount === 2 ? 'grid-cols-1 max-w-sm' : 'grid-cols-2 max-w-xl'} gap-4 sm:gap-5 w-full">
             ${choices.map(opt => `
               <button onclick="checkPicChoice('${escapeAttr(opt)}', '${escapeAttr(item.word)}', this)"
-                class="btn-toy bg-white hover:bg-orange-50 border-4 border-orange-300 rounded-3xl py-6 px-4 text-3xl sm:text-4xl text-slate-800 font-bold">
+                class="btn-toy bg-white hover:bg-orange-50 border-4 border-orange-300 rounded-3xl py-8 sm:py-10 px-5 text-4xl sm:text-5xl text-slate-800 font-bold">
                 ${opt}
               </button>
             `).join('')}
@@ -3407,28 +3449,28 @@
     function renderWordPuzzle(item) {
       const container = document.getElementById('gameContent');
       container.innerHTML = `
-        <div class="flex flex-col items-center text-center py-1 space-y-4 w-full max-w-5xl mx-auto">
+        <div class="flex flex-col items-center text-center py-1 space-y-5 w-full max-w-6xl mx-auto">
           <!-- Top Bar: Sound Button on Top Right -->
           <div class="w-full flex items-center justify-end">
             <button onclick="speak('${escapeAttr(item.word)}')" title="소리 듣기"
-              class="btn-toy bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-2xl text-sm sm:text-base font-sans-kr font-bold flex items-center gap-2 shadow-md">
+              class="btn-toy bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-2xl text-base sm:text-lg font-sans-kr font-bold flex items-center gap-2 shadow-md">
               <i class="fa-solid fa-volume-high"></i> 소리 듣기
             </button>
           </div>
 
           <!-- Upper Section: Extra-Large Picture (Left) + Horizontal Answer Slots (Right of Picture) -->
-          <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 px-2">
+          <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 px-2">
             <!-- Extra-Large Picture Card positioned on the Left side -->
-            <div class="bg-indigo-50 border-4 border-indigo-300 rounded-3xl p-4 sm:p-5 shadow-lg flex items-center justify-center shrink-0">
-              ${renderVisualMedia(item, "text-[7rem] sm:text-[9.5rem]", "w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96")}
+            <div class="bg-indigo-50 border-4 border-indigo-300 rounded-3xl p-5 sm:p-6 shadow-lg flex items-center justify-center shrink-0">
+              ${renderVisualMedia(item, "text-[8rem] sm:text-[10.5rem]", "w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96")}
             </div>
 
             <!-- Answer Slots arranged horizontally to the Right of the Picture -->
-            <div class="flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div class="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-5">
               ${puzzleTargetChars.map((_, idx) => {
                 const placed = puzzlePlaced[idx];
                 return `
-                  <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border-4 ${placed ? 'bg-indigo-500 border-indigo-700 text-white shadow-md' : 'border-dashed border-indigo-300 bg-indigo-50/70 text-indigo-300'} flex items-center justify-center text-4xl sm:text-5xl font-bold">
+                  <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-4 ${placed ? 'bg-indigo-500 border-indigo-700 text-white shadow-md' : 'border-dashed border-indigo-300 bg-indigo-50/70 text-indigo-300'} flex items-center justify-center text-5xl sm:text-6xl font-bold">
                     ${placed ? placed.ch : (idx + 1)}
                   </div>
                 `;
@@ -3437,16 +3479,16 @@
           </div>
 
           <!-- 9 Choice Tiles Grid -->
-          <div class="grid grid-cols-3 sm:grid-cols-9 gap-2.5 sm:gap-3 pt-2 w-full justify-items-center">
+          <div class="grid grid-cols-3 sm:grid-cols-9 gap-3 sm:gap-3.5 pt-2 w-full justify-items-center">
             ${puzzleScrambled.map(tile => `
               <button ${tile.used ? 'disabled' : ''} onclick="pickPuzzleTile(${tile.id})"
-                class="btn-toy w-16 h-16 sm:w-20 sm:h-20 rounded-2xl text-3xl sm:text-4xl font-bold ${tile.used ? 'opacity-25 bg-slate-200 text-slate-400' : 'bg-white border-4 border-indigo-400 text-indigo-700 hover:bg-indigo-50'}">
+                class="btn-toy w-20 h-20 sm:w-24 sm:h-24 rounded-2xl text-4xl sm:text-5xl font-bold ${tile.used ? 'opacity-25 bg-slate-200 text-slate-400' : 'bg-white border-4 border-indigo-400 text-indigo-700 hover:bg-indigo-50'}">
                 ${tile.ch}
               </button>
             `).join('')}
           </div>
 
-          <button onclick="initWordPuzzleMode()" class="text-xs font-sans-kr font-bold text-slate-400 hover:text-indigo-600 pt-1">
+          <button onclick="initWordPuzzleMode()" class="text-sm font-sans-kr font-bold text-slate-400 hover:text-indigo-600 pt-1">
             <i class="fa-solid fa-rotate-left"></i> 다시 하기
           </button>
         </div>
@@ -3617,7 +3659,7 @@
           </div>
 
           <!-- Sky Playfield -->
-          <div id="balloonSkyStage" class="relative w-full h-[360px] sm:h-[420px] rounded-3xl border-4 border-sky-300 bg-gradient-to-b from-sky-200 via-sky-100 to-emerald-100 overflow-hidden shadow-inner select-none transition-all duration-300">
+          <div id="balloonSkyStage" class="relative w-full h-[400px] sm:h-[460px] lg:h-[500px] rounded-3xl border-4 border-sky-300 bg-gradient-to-b from-sky-200 via-sky-100 to-emerald-100 overflow-hidden shadow-inner select-none transition-all duration-300">
             <!-- Decorative Clouds -->
             <div class="absolute top-6 left-10 text-white/75 text-5xl pointer-events-none">☁️</div>
             <div class="absolute top-14 right-16 text-white/70 text-6xl pointer-events-none">☁️</div>

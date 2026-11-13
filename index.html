@@ -250,6 +250,16 @@
       pointer-events: none;
       z-index: 100;
     }
+
+    /* 16:10 Tablet Landscape Frame Constraint */
+    @media (min-width: 640px) {
+      .tablet-16-10-frame {
+        aspect-ratio: 16 / 10;
+        width: 100%;
+        max-width: min(92rem, calc((100dvh - 6.5rem) * 1.6));
+        max-height: calc(100dvh - 6.5rem);
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col text-slate-800 theme-default">
@@ -263,12 +273,12 @@
   <!-- Landscape Hint Banner -->
   <div class="sm:hidden bg-amber-500 text-white text-xs font-sans-kr font-bold py-1.5 px-3 text-center flex items-center justify-center gap-2 shadow-sm">
     <i class="fa-solid fa-rotate"></i>
-    <span>태블릿을 가로로 눕히면 훨씬 넓고 편하게 쓸 수 있어요!</span>
+    <span>태블릿을 가로(16:10)로 눕히면 훨씬 넓고 편하게 쓸 수 있어요!</span>
   </div>
 
   <!-- Top Header -->
   <header id="mainTopHeader" class="w-full bg-white/90 backdrop-blur-md shadow-sm border-b-4 border-amber-300 sticky top-0 z-40 transition-colors duration-300">
-    <div class="max-w-[92rem] mx-auto px-5 sm:px-8 py-3 sm:py-3.5 flex items-center justify-between gap-3">
+    <div class="max-w-[92rem] mx-auto px-5 sm:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-3">
       <div class="flex items-center gap-3">
         <button id="homeBtn" onclick="navigateHome()" class="hidden btn-toy bg-amber-400 hover:bg-amber-500 text-white px-4 py-2.5 rounded-2xl text-lg flex items-center gap-2">
           <i class="fa-solid fa-house"></i>
@@ -278,7 +288,7 @@
           <div id="headerBrandLogo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-orange-400 to-amber-300 flex items-center justify-center text-white text-2xl sm:text-3xl shadow-md transition-all">한</div>
           <div>
             <h1 id="headerBrandTitle" class="text-2xl sm:text-3xl text-orange-600 leading-none tracking-wide transition-colors">신나는 한글 놀이터</h1>
-            <p id="headerBrandSub" class="text-xs font-sans-kr text-slate-500 font-bold hidden sm:block mt-0.5">태블릿 가로 맞춤 9가지 한글 놀이</p>
+            <p id="headerBrandSub" class="text-xs font-sans-kr text-slate-500 font-bold hidden sm:block mt-0.5">16:10 태블릿 가로 맞춤 9가지 한글 놀이</p>
           </div>
         </div>
       </div>
@@ -320,22 +330,22 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="relative z-10 flex-1 max-w-[92rem] w-full mx-auto px-5 sm:px-8 lg:px-10 py-4 sm:py-6 flex flex-col justify-center">
+  <!-- Main Content (16:10 Landscape Tablet Viewport) -->
+  <main class="relative z-10 flex-1 w-full mx-auto px-5 sm:px-8 lg:px-10 py-3 sm:py-4 flex flex-col items-center justify-center">
     <!-- HOME MENU VIEW -->
-    <section id="homeView" class="w-full animate-pop">
-      <div class="text-center mb-5 sm:mb-7">
-        <div id="homeTopPill" class="inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/85 px-5 py-2 rounded-full text-orange-600 text-sm sm:text-base font-bold border border-orange-200 shadow-sm mb-2 transition-all">
+    <section id="homeView" class="tablet-16-10-frame flex flex-col justify-between animate-pop">
+      <div class="text-center mb-3 sm:mb-4 shrink-0">
+        <div id="homeTopPill" class="inline-flex flex-wrap items-center justify-center gap-2.5 bg-white/85 px-5 py-1.5 rounded-full text-orange-600 text-sm sm:text-base font-bold border border-orange-200 shadow-sm mb-1.5 transition-all">
           <span id="homeThemeGreeting">✨ 놀이 카드를 눌러 한글 공부를 시작해 보세요! ✨</span>
           <button onclick="openShopModal('pet')" class="bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3.5 py-1 rounded-full text-xs sm:text-sm font-sans-kr font-bold shadow-xs hover:scale-105 transition flex items-center gap-1">
             <span id="homePetMiniBadge">🥚 단짝 펫 & 상점</span>
           </button>
         </div>
-        <h2 id="homeMainHeading" class="text-3xl sm:text-4xl text-slate-800 drop-shadow-sm">오늘은 어떤 한글 놀이를 할까요?</h2>
+        <h2 id="homeMainHeading" class="text-2xl sm:text-4xl text-slate-800 drop-shadow-sm">오늘은 어떤 한글 놀이를 할까요?</h2>
       </div>
 
-      <div id="homeModeGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-        <button onclick="startMode(1)" class="btn-toy bg-gradient-to-br from-rose-400 to-red-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+      <div id="homeModeGrid" class="flex-1 grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-3 gap-3.5 sm:gap-4 lg:gap-5">
+        <button onclick="startMode(1)" class="btn-toy bg-gradient-to-br from-rose-400 to-red-500 text-white p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">✍️</div>
           <div>
             <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">1단계 · 쓰기</span>
@@ -344,7 +354,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(2)" class="btn-toy bg-gradient-to-br from-amber-400 to-orange-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+        <button onclick="startMode(2)" class="btn-toy bg-gradient-to-br from-amber-400 to-orange-500 text-white p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🍎</div>
           <div>
             <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">2단계 · 어휘</span>
@@ -353,7 +363,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(3)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+        <button onclick="startMode(3)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🧩</div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -365,7 +375,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(4)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+        <button onclick="startMode(4)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🎧</div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -377,7 +387,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(5)" class="btn-toy bg-gradient-to-br from-indigo-400 to-violet-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+        <button onclick="startMode(5)" class="btn-toy bg-gradient-to-br from-indigo-400 to-violet-500 text-white p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🎲</div>
           <div>
             <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">5단계 · 순서</span>
@@ -386,7 +396,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(6)" class="btn-toy bg-gradient-to-br from-pink-400 to-fuchsia-500 text-white p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5">
+        <button onclick="startMode(6)" class="btn-toy bg-gradient-to-br from-pink-400 to-fuchsia-500 text-white p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/25 flex items-center justify-center text-4xl sm:text-5xl shrink-0">🎈</div>
           <div>
             <span class="text-xs sm:text-sm bg-white/25 px-2.5 py-0.5 rounded-full font-sans-kr font-bold">6단계 · 순발력</span>
@@ -395,7 +405,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(7)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+        <button onclick="startMode(7)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🚂</div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -407,7 +417,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(8)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+        <button onclick="startMode(8)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🎯</div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -419,7 +429,7 @@
           </div>
         </button>
 
-        <button onclick="startMode(9)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-5 sm:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner">
+        <button onclick="startMode(9)" aria-disabled="true" class="relative overflow-hidden bg-slate-200 border-2 border-slate-300 text-slate-400 p-4 sm:p-5 lg:p-6 rounded-3xl text-left flex items-center gap-4 sm:gap-5 opacity-75 cursor-not-allowed shadow-inner h-full">
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-300/70 flex items-center justify-center text-4xl sm:text-5xl shrink-0 grayscale">🔍</div>
           <div>
             <div class="flex items-center gap-1.5">
@@ -433,9 +443,9 @@
       </div>
     </section>
 
-    <!-- GAME STAGE CONTAINER -->
-    <section id="gameView" class="hidden w-full bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-5 sm:p-8 lg:p-10 animate-pop">
-      <div id="gameContent" class="w-full"></div>
+    <!-- GAME STAGE CONTAINER (16:10 Landscape Tablet Box) -->
+    <section id="gameView" class="hidden tablet-16-10-frame bg-white/95 backdrop-blur-md rounded-3xl shadow-xl border-4 border-amber-300 p-4 sm:p-6 lg:p-8 flex flex-col justify-center overflow-y-auto animate-pop">
+      <div id="gameContent" class="w-full h-full flex flex-col justify-center"></div>
     </section>
   </main>
 
